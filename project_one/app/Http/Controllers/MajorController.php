@@ -20,5 +20,11 @@ class MajorController extends Controller
         $major->delete();
         return redirect('/majors');
     }
+    function edit($id) {
+        $major = Major::find($id);
+        
+        return view('major.update',['major' => $major]);
+    }
+    
 
 }
